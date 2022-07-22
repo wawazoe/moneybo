@@ -1,24 +1,38 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users
 
-Things you may want to cover:
+| Column             | Type   | Options                   |
+| ------------------ | ------ | ------------------------- |
+| nickname           | string | null: false               |
+| encrypted_password | string | null: false               |
+| email              | string | null: false, unique: true |
 
-* Ruby version
+### Association
+- has_many :gives
+- has_many :gets
 
-* System dependencies
 
-* Configuration
+## gives(支出)
 
-* Database creation
+| Column            | Type       | Options                        |
+| ----------------- | ---------- | ------------------------------ |
+| clothing_out(衣)   | string     | null: false                    |
+| food_out(食)       | string     | null: false                    |
+| live_out(住)       | string     | null: false                    |
+| fixed_cost(固定費) | string     | null: false                    |
+| user              | references | null: false, foreign_key: true |
 
-* Database initialization
+### Association
+- belongs_to :user
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## gets(収入)
 
-* Deployment instructions
+| Column      | Type       | Options                        |
+| ----------- | ---------- | ------------------------------ |
+| salary(給料) | string     | null: false                    |
+| user        | references | null: false, foreign_key: true |
 
-* ...
+### Association
+- belongs_to :user
