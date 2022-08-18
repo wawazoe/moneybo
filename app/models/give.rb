@@ -1,9 +1,11 @@
 class Give < ApplicationRecord
    belongs_to :user
-  # validates :clothing_out, presence: true
-  # validates :food_out,     presence: true
-  # validates :live_out,     presence: true
-  # validates :fixed_cost,   presence: true
+  #  validates :clothing_out, presence: true
+  #  validates :food_out,     presence: true
+  #  validates :live_out,     presence: true
+  #  validates :fixed_cost,   presence: true
+
+   #validates :nickname, presence: :true
 end
 
 
