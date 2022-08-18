@@ -1,0 +1,14 @@
+<%= render "shared/header" %>
+<%= form_with model: @get, url: new_get_path, local: true do |f| %>
+入力する
+<ul>
+  <ul>収入
+  <li>給料</li>
+    <%= f.text_field :salary, class:"salary-input", id:"salary", placeholder:"例）10000" %>
+</ul>
+<div class="confirm-btn-contents">
+  <%= f.submit "確定する", class:"confirm-btn" %>
+  <%=link_to 'もどる', root_path, class:"back-btn" %>
+</div>
+<% end %>
+<%= render "shared/footer" %>

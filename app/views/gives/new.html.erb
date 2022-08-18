@@ -1,0 +1,20 @@
+<%= render "shared/header" %>
+<%= form_with model: @give, url: new_gife_path, local: true do |f| %>
+入力する
+<ul>
+<ul>支出
+  <li>衣</li>
+    <%= f.text_field :clothing_out, class:"clothing_out-input", id:"give-clothing_out", placeholder:"例）1000" %>
+  <li>食</li>
+    <%= f.text_field :food_out, class:"food_out-input", id:"give-food_out", placeholder:"例）2000" %>
+  <li>住</li>
+    <%= f.text_field :live_out, class:"live_out-input", id:"give-live_out", placeholder:"例）3000" %>
+  <li>固定費</li>
+    <%= f.text_field :fixed_cost, class:"fixed_cost-input", id:"give-fixed_cost", placeholder:"例）4000" %>
+</ul>
+<div class="confirm-btn-contents">
+  <%= f.submit "確定する", class:"confirm-btn" %>
+  <%=link_to 'もどる', root_path, class:"back-btn" %>
+</div>
+<% end %>
+<%= render "shared/footer" %>
