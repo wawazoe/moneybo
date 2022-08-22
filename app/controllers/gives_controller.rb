@@ -1,6 +1,6 @@
 class GivesController < ApplicationController
-before_action :authenticate_user!, only: [:index, :new, :edit]
-#before_action :give_set, only: [:new]
+before_action :authenticate_user!, only: [:index, :new, :edit, :create]
+#before_action :give_set, only: [:new, :create]
 
   def index
     @give = Give.all
@@ -13,10 +13,19 @@ before_action :authenticate_user!, only: [:index, :new, :edit]
   def edit
     #@give = Give.all(give_params)
   end
+  
+  def create
+    @give = Give.new(give_params)
+    if @give.save
+      redirect_to root_path
+    else
+      render :new
+    end
+  end
 
   private
   def give_params
-    params.require(:give).permit(:clothing_out_id, :food_out_id, :live_out_id, :fixed_cost_id).merge(user_id: current_user.id)
+    params.require(:give).permit(:clothing_out, :food_out, :live_out, :fixed_cost).merge(user_id: current_user.id)
   end
 
   def give_set
