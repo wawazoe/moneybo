@@ -1,4 +1,5 @@
 class GetsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :edit]
   def new
     @get = Get.new
   end
