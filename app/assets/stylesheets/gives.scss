@@ -21,3 +21,29 @@
   background-color: limegreen;
 }
 
+.top-page{
+  background-color: mediumturquoise;
+  
+}
+
+.top-content{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+}
+
+.money-input{
+  margin: 50px, 50px, 50px, 10px;
+}
+
+.money-total{
+  padding: 50px;
+}
+
+.top-img{
+  width: 350px;
+  height: 350px;
+  object-fit: contain;
+}
+

@@ -11,9 +11,10 @@ class GetsController < ApplicationController
     else
       render :new
     end
+  end
 
     private
     def get_params
-      params.require(:get).permit(:salalry).merge(user_id: current_user.id)
+      params.require(:get).permit(:salary).merge(user_id: current_user.id)
     end
 end
