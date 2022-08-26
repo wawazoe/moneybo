@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   root to: "gives#index"
   resources :gives, only:[:new, :edit, :create]
   post 'gives/new', to: 'gives#new'
-  resources :gets, only:[:edit, :create]
+  resources :gets, only:[:new, :edit, :create]
   post 'gets/new', to: 'gets#new'
 end

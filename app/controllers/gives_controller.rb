@@ -3,7 +3,8 @@ before_action :authenticate_user!, only: [:index, :new, :edit, :create]
 #before_action :give_set, only: [:new, :create]
 
   def index
-    @give = Give.all
+    @gives = Give.all
+    @gets = Get.all
   end
 
   def new
