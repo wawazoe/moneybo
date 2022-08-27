@@ -8,13 +8,19 @@
 }
 
 .header{
-  background-color: pink;
 }
 
 .header-img{
   width: 100px;
   height: 100px;
   object-fit: contain;
+}
+
+.header-image{
+  width: 980px;
+  height: 300px;
+  object-fit: cover;
+  opacity: 30%
 }
 
 .footer{
