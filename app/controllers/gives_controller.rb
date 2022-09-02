@@ -12,7 +12,10 @@ before_action :authenticate_user!, only: [:index, :new, :edit, :create]
   end
 
   def edit
-    #@give = Give.all(give_params)
+    # @give = Give.all(give_params)
+     unless current_user
+       redirect_to root_path
+     end
   end
   
   def create
